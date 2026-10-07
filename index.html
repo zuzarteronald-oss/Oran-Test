@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORAN International Ventures | Professional Haircare & Grooming Brands</title>
+  <meta name="description" content="ORAN International Ventures Pvt Ltd is the parent company of Orangewood, Biotop India, Graham Hill and more professional hair care and grooming brands.">
+  <style>
+    :root {
+      --ink: #14161f;
+      --ink-soft: #3b4050;
+      --muted: #6b7183;
+      --bg: #ffffff;
+      --bg-alt: #faf6f1;
+      --orange: #e8772e;
+      --orange-dark: #c95f1a;
+      --navy: #0f1b33;
+      --border: #ece5dc;
+      --radius: 16px;
+      --shadow: 0 14px 40px rgba(15, 27, 51, .10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1140px, 100% - 40px); margin-inline: auto; }
+    section { padding: 88px 0; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: -.01em; }
+    h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 14px; }
+    .eyebrow { display: inline-block; color: var(--orange-dark); font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 640px; }
+    .center { text-align: center; }
+    .center .lead { margin-inline: auto; }
+
+    .btn { display: inline-block; padding: 14px 30px; border-radius: 999px; font-weight: 600; border: 2px solid transparent; cursor: pointer; font-size: 1rem; transition: .2s; font-family: inherit; }
+    .btn-primary { background: var(--orange); color: #fff; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .btn-ghost { border-color: rgba(255,255,255,.5); color: #fff; }
+    .btn-ghost:hover { background: #fff; color: var(--navy); }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-weight: 800; font-size: 1.35rem; letter-spacing: .04em; }
+    .logo span { color: var(--orange); }
+    .logo small { display: block; font-size: .55rem; letter-spacing: .28em; color: var(--muted); font-weight: 600; margin-top: -4px; }
+    nav ul { display: flex; gap: 30px; list-style: none; align-items: center; }
+    nav a:not(.btn) { color: var(--ink-soft); font-weight: 500; font-size: .96rem; }
+    nav a:not(.btn):hover { color: var(--orange-dark); }
+    nav .btn { padding: 10px 22px; }
+    .menu-toggle { display: none; background: none; border: 0; font-size: 1.8rem; cursor: pointer; color: var(--ink); }
+
+    /* Hero */
+    .hero { background: radial-gradient(1200px 500px at 85% -10%, rgba(232,119,46,.35), transparent 60%), var(--navy); color: #fff; padding: 110px 0 100px; }
+    .hero .eyebrow { color: #ffb37d; }
+    .hero h1 { font-size: clamp(2.3rem, 5.4vw, 3.9rem); max-width: 800px; margin-bottom: 22px; }
+    .hero h1 em { font-style: normal; color: var(--orange); }
+    .hero p { color: #c9d1e3; font-size: 1.15rem; max-width: 620px; margin-bottom: 34px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* Stats strip */
+    .strip { background: var(--bg-alt); border-bottom: 1px solid var(--border); padding: 34px 0; }
+    .strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+    .strip strong { display: block; font-size: 1.5rem; color: var(--orange-dark); }
+    .strip span { color: var(--muted); font-size: .92rem; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .about p { color: var(--ink-soft); margin-bottom: 16px; }
+    .pillars { display: grid; gap: 16px; }
+    .pillar { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; }
+    .pillar h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .pillar p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    /* Brands */
+    .brands { background: var(--bg-alt); }
+    .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 48px; text-align: left; }
+    .brand { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: .25s; }
+    .brand:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .brand-top { padding: 34px 28px; color: #fff; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .brand-top h3 { font-size: 1.7rem; }
+    .brand-top span { font-size: .85rem; opacity: .85; letter-spacing: .06em; }
+    .b-ow .brand-top { background: linear-gradient(135deg, #f08a3e, #c95f1a); }
+    .b-bt .brand-top { background: linear-gradient(135deg, #1b2a4a, #0b1226); }
+    .b-gh .brand-top { background: linear-gradient(135deg, #2f3a3f, #12181b); }
+    .b-more .brand-top { background: repeating-linear-gradient(135deg, #f3ebe2, #f3ebe2 12px, #efe5d9 12px, #efe5d9 24px); color: var(--ink-soft); }
+    .brand-body { padding: 26px 28px 30px; display: flex; flex-direction: column; flex: 1; }
+    .brand-body p { color: var(--ink-soft); font-size: .96rem; margin-bottom: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .tags li { list-style: none; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; font-size: .78rem; color: var(--ink-soft); }
+    .brand-link { margin-top: auto; font-weight: 700; color: var(--orange-dark); }
+    .brand-link::after { content: " →"; transition: margin .2s; }
+    .brand:hover .brand-link::after { margin-left: 6px; }
+    .brand-note { margin-top: auto; font-size: .85rem; color: var(--muted); }
+
+    /* Values */
+    .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 44px; text-align: left; }
+    .value { padding: 26px; border: 1px solid var(--border); border-radius: var(--radius); }
+    .value .num { color: var(--orange); font-weight: 800; font-size: 1.3rem; margin-bottom: 8px; }
+    .value h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .value p { color: var(--muted); font-size: .94rem; }
+
+    /* Partner */
+    .partner { background: var(--navy); color: #fff; }
+    .partner-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .partner .lead { color: #c9d1e3; }
+    .partner ul { list-style: none; margin-top: 22px; }
+    .partner li { padding: 8px 0; color: #dfe5f2; }
+    .partner li::before { content: "✓"; color: var(--orange); font-weight: 800; margin-right: 12px; }
+
+    form { display: grid; gap: 12px; background: #fff; color: var(--ink); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    form h3 { margin-bottom: 4px; }
+    input, textarea, select { width: 100%; padding: 13px 14px; border: 1px solid var(--border); border-radius: 10px; font: inherit; background: #fff; color: var(--ink); }
+    input:focus, textarea:focus, select:focus { outline: 2px solid var(--orange); border-color: transparent; }
+    .form-success { display: none; background: #e7f8ee; color: #137a3f; padding: 12px; border-radius: 10px; text-align: center; font-weight: 600; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; text-align: left; }
+    .contact-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+    .contact-card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--orange-dark); }
+    .contact-card p { color: var(--ink-soft); font-size: .96rem; }
+
+    footer { background: #0a1224; color: #aab3c9; padding: 36px 0; font-size: .9rem; }
+    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+    .foot a:hover { color: var(--orange); }
+    .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 980px) {
+      .about-grid, .partner-grid { grid-template-columns: 1fr; gap: 36px; }
+      .brand-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .strip-grid { grid-template-columns: 1fr 1fr; gap: 26px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      section { padding: 60px 0; }
+      .hero { padding: 70px 0 64px; }
+      .menu-toggle { display: block; }
+      nav ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 10px 20px 20px; }
+      nav ul.open { display: flex; }
+      nav li { width: 100%; padding: 10px 0; }
+      nav .btn { width: 100%; text-align: center; }
+      .brand-grid, .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo">ORAN<span>.</span><small>INTERNATIONAL VENTURES</small></a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#brands">Our Brands</a></li>
+        <li><a href="#values">Why ORAN</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#partner" class="btn btn-primary">Partner With Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">ORAN International Ventures Pvt Ltd</span>
+      <h1>A house of <em>professional hair care</em> and grooming brands.</h1>
+      <p>ORAN International Ventures brings together distinctive brands under one roof, from salon-quality hair care to modern grooming, built for professionals and the people they care for.</p>
+      <div class="hero-cta">
+        <a href="#brands" class="btn btn-primary">Explore Our Brands</a>
+        <a href="#partner" class="btn btn-ghost">Become a Partner</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="container strip-grid">
+      <div><strong>3+</strong><span>Brands under one group</span></div>
+      <div><strong>Salon-grade</strong><span>Professional formulations</span></div>
+      <div><strong>Pan-India</strong><span>Online and salon reach</span></div>
+      <div><strong>Mumbai</strong><span>Headquartered in Dadar</span></div>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div>
+        <span class="eyebrow">About ORAN</span>
+        <h2>One parent company. Many brands.</h2>
+        <p>ORAN International Ventures Pvt Ltd is the parent company of a growing family of brands. Each brand has its own identity and audience, and all share the same commitment to quality, professional expertise and honest ingredients.</p>
+        <p>From Orangewood's salon-quality repair and smoothing ranges to Biotop India's precision-driven professional care, our brands are made to perform in the salon chair and at home.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><h3>Professional first</h3><p>Developed with salon professionals and stylists in mind.</p></div>
+        <div class="pillar"><h3>Brand-led growth</h3><p>Every brand keeps its own voice, range and community.</p></div>
+        <div class="pillar"><h3>Built to expand</h3><p>A platform that continues to add new brands and categories.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands" class="brands">
+    <div class="container center">
+      <span class="eyebrow">Our Brands</span>
+      <h2>Brands under the ORAN wing</h2>
+      <p class="lead">Each brand serves a different need, and all of them are trusted for quality.</p>
+
+      <div class="brand-grid">
+        <article class="brand b-ow">
+          <div class="brand-top"><h3>Orangewood</h3><span>PROFESSIONAL HAIR CARE</span></div>
+          <div class="brand-body">
+            <p>Salon-quality hair care designed to nourish, repair and rejuvenate. Orangewood celebrates every hair texture with shampoos, conditioners, masks, serums and keratin treatments.</p>
+            <ul class="tags"><li>Bubble Bliss</li><li>Mane-A-Tame</li><li>Infudra D'Affluence</li><li>Bliss Treatments</li></ul>
+            <a class="brand-link" href="https://orangewood.in" target="_blank" rel="noopener">Visit orangewood.in</a>
+          </div>
+        </article>
+
+        <article class="brand b-bt">
+          <div class="brand-top"><h3>Biotop India</h3><span>PRECISION. DOWN TO THE ROOTS.</span></div>
+          <div class="brand-body">
+            <p>Biotop Professional brings luxury salon experiences home, with ranges for nourishment, curls, volume, silver tones, scalp care and styling. Free from SLS, SLES and parabens.</p>
+            <ul class="tags"><li>911 Quinoa</li><li>700 Keratin &amp; Kale</li><li>19 Pro Silver</li><li>69 Pro Active</li><li>101 Create</li></ul>
+            <a class="brand-link" href="https://biotopindia.com" target="_blank" rel="noopener">Visit biotopindia.com</a>
+          </div>
+        </article>
+
+        <article class="brand b-gh">
+          <div class="brand-top"><h3>Graham Hill</h3><span>HAIR &amp; GROOMING</span></div>
+          <div class="brand-body">
+            <p>A modern grooming and hair care brand with a distinctive range of shampoos and styling essentials. Details and website coming soon.</p>
+            <ul class="tags"><li>Shampoos</li><li>Grooming</li><li>Styling</li></ul>
+            <span class="brand-note">Brand website coming soon</span>
+          </div>
+        </article>
+
+        <article class="brand b-more" style="grid-column: 1 / -1;">
+          <div class="brand-top" style="min-height:110px"><h3>And many more</h3><span>NEW BRANDS IN THE PIPELINE</span></div>
+          <div class="brand-body">
+            <p>ORAN continues to grow its portfolio. If you have a brand that fits our professional standards, we would like to hear from you.</p>
+            <a class="brand-link" href="#partner">Talk to us</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <div class="container center">
+      <span class="eyebrow">Why ORAN</span>
+      <h2>What every ORAN brand stands for</h2>
+      <div class="values-grid">
+        <div class="value"><div class="num">01</div><h3>Salon-grade quality</h3><p>Formulations built to perform for professionals first.</p></div>
+        <div class="value"><div class="num">02</div><h3>Cleaner formulas</h3><p>Our brands avoid sulphates and parabens, and focus on responsibly chosen ingredients.</p></div>
+        <div class="value"><div class="num">03</div><h3>Education &amp; support</h3><p>Training and guidance that help stylists get the best results.</p></div>
+        <div class="value"><div class="num">04</div><h3>Distinct identities</h3><p>Each brand has its own range, voice and audience.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partner" class="partner">
+    <div class="container partner-grid">
+      <div>
+        <span class="eyebrow" style="color:#ffb37d">Partner With Us</span>
+        <h2>Distributors, salons and brand partners</h2>
+        <p class="lead">Whether you run a salon, distribute professional products or own a brand, let's build something together.</p>
+        <ul>
+          <li>Salon partnerships and professional supply</li>
+          <li>Distribution opportunities across India</li>
+          <li>Brand acquisition and collaboration enquiries</li>
+        </ul>
+      </div>
+      <form id="partner-form">
+        <h3>Send us an enquiry</h3>
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <select name="interest" required>
+          <option value="">I am interested in...</option>
+          <option>Salon partnership</option>
+          <option>Distribution</option>
+          <option>Brand collaboration</option>
+          <option>Something else</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Tell us a bit more" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+        <div class="form-success">Thank you! We will get back to you shortly.</div>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container center">
+      <span class="eyebrow">Contact</span>
+      <h2>Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-card"><h3>Head office</h3><p>B-705, Kohinoor Square,<br>Dadar (W), Mumbai - 400028</p></div>
+        <div class="contact-card"><h3>Phone</h3><p><a href="tel:+919136920538">+91 91369 20538</a></p></div>
+        <div class="contact-card"><h3>Our brand sites</h3><p><a href="https://orangewood.in" target="_blank" rel="noopener">orangewood.in</a><br><a href="https://biotopindia.com" target="_blank" rel="noopener">biotopindia.com</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <span>© <span id="year"></span> ORAN International Ventures Pvt Ltd. All rights reserved.</span>
+    <div class="foot-links">
+      <a href="https://orangewood.in" target="_blank" rel="noopener">Orangewood</a>
+      <a href="https://biotopindia.com" target="_blank" rel="noopener">Biotop India</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Demo handler: connect to a form service (e.g. Formspree) to receive enquiries.
+  document.getElementById('partner-form').addEventListener('submit', e => {
+    e.preventDefault();
+    e.target.querySelector('.form-success').style.display = 'block';
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
